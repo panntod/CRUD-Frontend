@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import { Link } from "react-router-dom";
 
 const UserList = () => {
@@ -10,13 +9,26 @@ const UserList = () => {
   }, []);
 
   const getUsers = async () => {
-    const response = await axios.get("http://localhost:5000/users");
-    setUser(response.data);
+    try {
+      const response = await fetch("http://localhost:5000/users");
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      const data = await response.json();
+      setUser(data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const deleteUser = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/users/${id}`);
+      const response = await fetch(`http://localhost:5000/users/${id}`, {
+        method: "DELETE",
+      });
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
       getUsers();
     } catch (error) {
       console.log(error);
@@ -24,38 +36,46 @@ const UserList = () => {
   };
 
   return (
-    <div className="columns mt-5 is-centered">
-      <div className="column is-half">
-        <Link to={`add`} className="button is-success">
+    <div className="flex mt-5 justify-center">
+      <div className="w-1/2">
+        <div className="flex justify-between">
+        <Link
+          to="add"
+          className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+        >
           Add New
         </Link>
-        <table className="table is-striped is-fullwidth">
+        <h1 className="font-semibold text-lg my-auto">Hello, Admin!</h1>
+        </div>
+        <table className="table-auto w-full mt-10 shadow-lg">
           <thead>
             <tr>
-              <th>No</th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Gender</th>
-              <th>Actions</th>
+              <th className="px-4 py-2 bg-blue-600 text-white border-tl">No</th>
+              <th className="px-4 py-2 bg-blue-600 text-white">Name</th>
+              <th className="px-4 py-2 bg-blue-600 text-white">Email</th>
+              <th className="px-4 py-2 bg-blue-600 text-white">Gender</th>
+              <th className="px-4 py-2 bg-blue-600 text-white border-tr">
+                Actions
+              </th>
             </tr>
           </thead>
           <tbody>
             {users.map((user, index) => (
-              <tr key={user.id}>
-                <td>{index + 1}</td>
-                <td>{user.name}</td>
-                <td>{user.email}</td>
-                <td>{user.gender}</td>
-                <td>
+              <tr className="border" key={user.id}>
+                <td className="px-4 py-2">{index + 1}</td>
+                <td className="px-4 py-2">{user.name}</td>
+                <td className="px-4 py-2">{user.email}</td>
+                <td className="px-4 py-2">{user.gender}</td>
+                <td className="px-4 py-2 flex justify-end">
                   <Link
                     to={`edit/${user.id}`}
-                    className="button is-small is-info mr-2"
+                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded mx-1"
                   >
                     Edit
                   </Link>
                   <button
                     onClick={() => deleteUser(user.id)}
-                    className="button is-small is-danger"
+                    className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-3 rounded mx-1"
                   >
                     Delete
                   </button>
