@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 const UserList = () => {
   const [users, setUser] = useState([]);
-
   useEffect(() => {
     getUsers();
   }, []);
@@ -60,6 +59,7 @@ const UserList = () => {
             </tr>
           </thead>
           <tbody>
+
             {users.map((user, index) => (
               <tr className="border" key={user.id}>
                 <td className="px-4 py-2">{index + 1}</td>
