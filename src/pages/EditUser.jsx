@@ -8,14 +8,14 @@ const EditUser = () => {
   const [gender, setGender] = useState("Male");
   const navigate = useNavigate();
   const { id } = useParams();
-  
+
   useEffect(() => {
     getUserById();
-});
-  
+  });
+
   const updateUser = async (e) => {
     e.preventDefault();
-  
+
     const user = { name, email, gender, password };
     try {
       const response = await fetch(`http://localhost:5000/users/${id}`, {
@@ -25,7 +25,7 @@ const EditUser = () => {
         },
         body: JSON.stringify(user),
       });
-  
+
       if (response.ok) {
         navigate("/");
       } else {
@@ -35,7 +35,7 @@ const EditUser = () => {
       console.log(error);
     }
   };
-  
+
   const getUserById = async () => {
     try {
       const response = await fetch(`http://localhost:5000/users/${id}`);
@@ -51,11 +51,10 @@ const EditUser = () => {
       console.log(error);
     }
   };
-  
 
   return (
-    <div className="flex mt-5 justify-center">
-      <div className="w-1/2">
+    <div className="flex mt-5 justify-center min-h-screen">
+      <div className="w-1/2  my-auto">
         <form
           onSubmit={updateUser}
           className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
@@ -109,7 +108,7 @@ const EditUser = () => {
               placeholder="password"
             />
           </div>
-          
+
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
