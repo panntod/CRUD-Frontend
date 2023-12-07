@@ -17,7 +17,8 @@ Clone repository backend proyek ini dengan menggunakan perintah berikut:
 ```
 git clone https://github.com/panntod/CRUD_Backend.git
 ```
-
+or
+See: https://github.com/panntod/CRUD_Backend
 ### Langkah 2: Install Dependensi
 
 Masuk ke direktori frontend dan lakukan instalasi dependensi dengan perintah:
