@@ -1,8 +1,35 @@
-# React + Vite
+# CRUD  APP
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Deskripsi
 
-Currently, two official plugins are available:
+Proyek ini merupakan sebuah website yang dibangun dengan menggunakan React vite dan tailwind. Website ini memungkinkan pengguna untuk melakukan operasi CRUD (Create, Read, Update, Delete) pada suatu data, baik digunakan untuk para junior yang ingin mencoba mengkoneksikan frontend dan backend.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Fitur
+
+- Sistem CRUD User 
+- Akses MySql
+
+## Cara Menjalankan Aplikasi
+
+### Langkah 1: Clone Backend
+
+Clone repository backend proyek ini dengan menggunakan perintah berikut:
+```
+git clone https://github.com/panntod/CRUD_Backend.git
+```
+
+### Langkah 2: Install Dependensi
+
+Masuk ke direktori frontend dan lakukan instalasi dependensi dengan perintah:
+```
+npm install
+```
+
+Pastikan MongoDB sudah berjalan atau terkoneksi dengan benar.
+
+### Langkah 3: Menjalankan Frontend
+
+Selanjutnya, untuk menjalankan frontend:
+```
+npm run dev
+```
