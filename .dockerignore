@@ -1,0 +1,24 @@
+# Node modules & dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+pnpm-debug.log
+
+# Editor & system files
+.DS_Store
+*.swp
+.vscode/
+.idea/
+*.iml
+
+# Logs & temp files
+logs
+*.log
+tmp/
+dist/
+build/
+
+# Git-related
+.git
+.gitignore
+.gitmodules
