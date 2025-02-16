@@ -1,4 +1,4 @@
-# CRUD  APP
+# CRUD APP
 
 ## Deskripsi
 
@@ -6,7 +6,7 @@ Proyek ini merupakan sebuah website yang dibangun dengan menggunakan React vite 
 
 ## Fitur
 
-- Sistem CRUD User 
+- Sistem CRUD User
 - Akses MySql
 
 ## Cara Menjalankan Aplikasi
@@ -14,15 +14,19 @@ Proyek ini merupakan sebuah website yang dibangun dengan menggunakan React vite 
 ### Langkah 1: Clone Backend
 
 Clone repository backend proyek ini dengan menggunakan perintah berikut:
-```
+
+```bash
 git clone https://github.com/panntod/CRUD-Backend.git
 ```
+
 or
-See: https://github.com/panntod/CRUD-Backend
+See: [https://github.com/panntod/CRUD-Backend](https://github.com/panntod/CRUD-Backend)
+
 ### Langkah 2: Install Dependensi
 
 Masuk ke direktori frontend dan lakukan instalasi dependensi dengan perintah:
-```
+
+```bash
 npm install
 ```
 
@@ -31,6 +35,7 @@ Pastikan MongoDB sudah berjalan atau terkoneksi dengan benar.
 ### Langkah 3: Menjalankan Frontend
 
 Selanjutnya, untuk menjalankan frontend:
-```
+
+```bash
 npm run dev
 ```
