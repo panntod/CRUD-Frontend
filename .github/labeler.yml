@@ -1,0 +1,36 @@
+# Add 'Documentation' label to any changes within 'docs' or 'guides' folders or any markdown files
+Documentation:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '**/*.md'
+
+# Add 'source' label to any change to src files except 'src/docs/'
+Source:
+  - changed-files:
+      - any-glob-to-any-file: 'src/**/*'
+      - all-globs-to-all-files: '!src/**/*.md'
+
+# Add 'release' label to any PR that is opened against the `main` branch
+Release:
+  - base-branch: 'main'
+
+# Add 'Feature' label to any PR where the head branch name starts with `feature`
+Feature:
+  - head-branch: '^feature'
+
+# Add 'Bug' label to any PR where the head branch name starts with `hotfix`, `fix`, or `bugfix`
+Bug:
+  - head-branch:
+      - '^hotfix'
+      - '^fix'
+      - '^bugfix'
+
+# Add 'Integration' label to any PR where the title contains 'integration', 'integrasi', or 'integrations'
+Integration:
+  - title:
+      - 'integration'
+      - 'integrations'
+
+# Add 'Slicing' label to any PR where the title contains 'slicing'
+Slicing:
+  - title: 'slicing'
