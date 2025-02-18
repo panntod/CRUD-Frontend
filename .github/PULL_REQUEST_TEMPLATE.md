@@ -19,8 +19,8 @@
 
 ### Code Quality & Standards
 
-- The code added or changed follows the project standards.
-- The naming of variables, properties, and components conforms to the conventions used in this project.
+- [] The code added or changed follows the project standards.
+- [] The naming of variables, properties, and components conforms to the conventions used in this project.
 
 ### Testing & Validation
 
