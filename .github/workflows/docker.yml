@@ -38,9 +38,15 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
+          context: '.'
+          platforms: 'linux/amd64,linux/arm64'
           push: true
           tags: |
             ${{ secrets.DOCKERHUB_REPOSITORY }}:${{ env.VERSION }}
             ${{ secrets.DOCKERHUB_REPOSITORY }}:latest
+          labels: |
+            org.opencontainers.image.source=${{ github.repositoryUrl }}
+            org.opencontainers.image.revision=${{ github.sha }}
+            org.opencontainers.image.version=${{ env.VERSION }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
