@@ -1,36 +1,53 @@
-# Add 'Documentation' label to any changes within 'docs' or 'guides' folders or any markdown files
+# Label: Documentation
 Documentation:
-  - changed-files:
-      - any-glob-to-any-file:
-          - '**/*.md'
+  description: 'Changes related to documentation, guides, or markdown files.'
+  color: '0075ca' # Warna biru
+  changed-files:
+    - any-glob-to-any-file:
+        - '**/*.md'
 
-# Add 'source' label to any change to src files except 'src/docs/'
+# Label: Source
 Source:
-  - changed-files:
-      - any-glob-to-any-file: 'src/**/*'
-      - all-globs-to-all-files: '!src/**/*.md'
+  description: 'Changes related to source code files, excluding documentation.'
+  color: '7057ff' # Warna ungu
+  changed-files:
+    - any-glob-to-any-file: 'src/**/*'
+    - all-globs-to-all-files: '!src/**/*.md'
 
-# Add 'release' label to any PR that is opened against the `main` branch
+# Label: Release
 Release:
-  - base-branch: 'main'
+  description: 'Pull requests targeting the main branch for releases.'
+  color: 'bfd4f2' # Warna biru muda
+  base-branch: 'main'
 
-# Add 'Feature' label to any PR where the head branch name starts with `feature`
+# Label: Feature
 Feature:
-  - head-branch: '^feature'
+  description: 'Pull requests introducing new features or enhancements.'
+  color: 'a2eeef' # Warna cyan
+  head-branch:
+    - '^feature'
+    - '^feat'
+    - '^enhancement'
 
-# Add 'Bug' label to any PR where the head branch name starts with `hotfix`, `fix`, or `bugfix`
+# Label: Bug
 Bug:
-  - head-branch:
-      - '^hotfix'
-      - '^fix'
-      - '^bugfix'
+  description: 'Pull requests addressing bugs or hotfixes.'
+  color: 'd73a4a' # Warna merah
+  head-branch:
+    - '^hotfix'
+    - '^fix'
+    - '^bugfix'
 
-# Add 'Integration' label to any PR where the title contains 'integration', 'integrasi', or 'integrations'
+# Label: Integration
 Integration:
-  - title:
-      - 'integration'
-      - 'integrations'
+  description: 'Pull requests related to integrations or API connections.'
+  color: 'ff9f1c' # Warna oranye
+  title:
+    - '^integration'
+    - '^integrations'
 
-# Add 'Slicing' label to any PR where the title contains 'slicing'
+# Label: Slicing
 Slicing:
-  - title: 'slicing'
+  description: 'Pull requests related to UI/UX slicing or design implementation.'
+  color: 'ffcc99' # Warna peach
+  title: 'slicing'
